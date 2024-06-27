@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+<title>This is Signup page</title>
+</head>
+<body>
+	
+	<section class="h-100 gradient-form">
+		<div class="container py-5 h-100">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-xl-18">
+					<div class="card rounded-3 text-black">
+						<div class="row g-0">
+							<div
+								class="col-lg-6 d-flex align-items-center gradient-custom-2 text-center">
+								<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+									<h4 class="mb-4">Smart Contact Suite</h4>
+									<p class="small mb-0">
+										Welcome to Smart Contact Suite </br> Your ultimate solution for
+										efficient contact management!</br> Easily organize, manage, and
+										connect with your contacts all in one place.</br> Sign up now to
+										get started!
+									</p>
+									
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="card-body p-md-5 mx-md-4">
+
+									<div class="text-center">
+										<img
+											src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+											style="width: 185px;" alt="logo">
+										<h4 class="mt-1 mb-5 pb-1">Smart Contact Suite</h4>
+									</div>
+
+									<form novalidate action="" th:action="@{/do_register}"
+										method="post" th:object="${user}">
+										<p>Please Register to your account</p>
+
+										<div th:if="${session.message}"
+											th:classappend="${session.message.type}"
+											class="alert  text-center" role="alert">
+											<p th:text="${session.message.content}"></p>
+											<th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+										</div>
+
+										<!-- Name field  -->
+										<div data-mdb-input-init class="form-outline mb-4">
+											<input type="text" id="form2Example11" name="name"
+												th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : '' "
+												class="form-control" placeholder="Enter Your Name"
+												th:value="${user.name}" /> <label class="form-label"
+												for="form2Example11">Your Name</label>
+											<div class="invalid-feedback"
+												th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+										</div>
+
+										<!-- Email field  -->
+										<div data-mdb-input-init class="form-outline mb-4">
+											<input name="email" type="email" id="form2Example11"
+												th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : '' "
+												class="form-control" placeholder="Enter Your Email"
+												th:value="${user.email}" /> <label class="form-label"
+												for="form2Example11">Email Address</label>
+											<div class="invalid-feedback"
+												th:each="e : ${#fields.errors('email')}" th:text="${e}">
+											</div>
+										</div>
+
+										<!-- Password field  -->
+										<div data-mdb-input-init class="form-outline mb-4">
+											<input type="password" id="form2Example11" name="password"
+												th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : '' "
+												class="form-control" placeholder="Enter Your Password"
+												th:value="${user.password}" /> <label class="form-label"
+												for="form2Example11">Password</label>
+											<div class="invalid-feedback"
+												th:each="e : ${#fields.errors('password')}" th:text="${e}"></div>
+										</div>
+
+										<!-- About field  -->
+										<div data-mdb-input-init class="form-outline mb-4">
+											<textarea id="form2Example11" name="about"
+												th:classappend="${#fields.hasErrors('about')} ? 'is-invalid' : '' "
+												class="form-control" placeholder="Enter something yourself"
+												rows="5" th:value="${user.about}"></textarea>
+											<label class="form-label" for="form2Example11">User
+												Description</label>
+											<div class="invalid-feedback"
+												th:each="e : ${#fields.errors('about')}" th:text="${e}"></div>
+										</div>
+
+										<!--Terms & condition agreement-->
+										<div data-mdb-input-init class="form-outline mb-4">
+											<input type="checkbox" name="agreement"
+												class="from-check-input" id="agreement" /> <label
+												for="agreement">Accept terms and conditions.</label>
+										</div>
+
+										<div class="text-center pt-1 mb-5 pb-1">
+											<button data-mdb-button-init data-mdb-ripple-init
+												class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+												type="submit">Submit</button>
+											<button data-mdb-button-init data-mdb-ripple-init
+												class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+												type="submit">Reset</button>
+											
+										</div>
+
+									</form>
+
+
+								</div>
+							</div>
+							
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

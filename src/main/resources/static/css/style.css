@@ -1,0 +1,156 @@
+@charset "ISO-8859-1";
+
+body {
+	background: #9290C3 !important;
+}
+
+.bg-primary {
+	background-color: #070F2B !important;
+}
+/* .navbar .navbar-brand, 
+.navbar .nav-link {
+    color: #DBAFA0  !important;
+} */
+.banner{
+	width:100%;
+	height:100vh;
+	background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(../image/15.jpg);
+	background-size:cover;
+	color:white;
+}
+
+.my-card{
+	padding: 20px;
+	background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6));
+	
+	border-radius: 20px;
+}
+
+.signup{
+	width:100%;
+	height:93vh;
+	background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(../image/2.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment:fixed; 	
+	color:white;
+}
+
+.bg-green{
+	background: #FA7070;
+	color:black !important;
+}
+
+
+.gradient-form{
+	
+	margin-top: 1% !important;
+}
+
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #1B1A55;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #070F2B, #1B1A55, #1B1A55, #070F2B);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #070F2B, #1B1A55, #1B1A55, #070F2B);
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
+}
+
+
+.sidebar{
+	width: 18%;
+	background:#535C91;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 9;
+}
+.sidebar a{
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	padding: 10px 25px;
+	color:white;
+}
+
+.sidebar a:hover{
+	background: #9290C3;
+	color: #070F2B;
+}
+
+.sidebar .divider{
+	height: .5px;
+	width: 100%;
+	margin-top: 10px;
+}
+.content{
+	margin-left: 20%;
+	transition: margin-left 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+	.sidebar{
+		display: none;
+		width: 80% !important;
+		background: #535C91;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content{
+		margin-left: 2% !important;
+	}
+}
+
+.sidebar .crossbtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+.content .toggle{
+	top: 0;
+	left: 35px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.input-group-text{
+		background: #9290C3;
+		color:#070F2B;
+}
+
+.my_profile_picture{
+	width: 30px;
+	height: 30px;
+	object-fit:cover;
+	border-radius: 50%;
+}
+
+.my_profile_picture1{
+	width: 200px;
+	height: 200px;
+	object-fit:cover;
+	border-radius: 50%;
+}
+
+.my_profile_picture2{
+	width: 300px;
+	height: 200px;
+	object-fit:cover;
+}

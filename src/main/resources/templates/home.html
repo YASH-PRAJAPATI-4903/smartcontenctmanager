@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+<title>This is Home page</title>
+</head>
+<body>
+	<section
+		class="banner d-flex justify-content-center align-items-center">
+		<div class="text-center">
+			<h1 class=" font-weight-bold">This is home page.</h1>
+			<p >
+				Welcome to Smart Contact Suite - Your ultimate solution for
+				efficient contact management!<br> Easily organize, manage, and
+				connect with your contacts all in one place. Sign up now to get
+				started!
+			</p>
+			<button class="btn text-white bg-primary btn-lg" onclick="window.location.href='/login'">Get Start</button>
+		</div>
+	</section>
+</body>
+</html>

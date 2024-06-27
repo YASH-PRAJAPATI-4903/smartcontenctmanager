@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8" />
+<title>Add Contact</title>
+</head>
+<body>
+	<section>
+		<div class="card " style="margin-right: 2% !important;">
+			<div class="card-body">
+				<h1 class="text-center">Add Contact</h1>
+				<div class="container-fluid mt-1">
+					<div class="row ">
+						<div class=" offset-md-1">
+							<div th:if="${session.message}">
+								<div th:classappend="${'alert-'+session.message.type}"
+									class="alert text-center" role="alert">
+									<span th:text="${session.message.content}"></span>
+								</div>
+								<th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+							</div>
+							<form action="#" th:object="${contact}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-2">
+								<!-- first name  -->
+								<div class="input-group mb-3 ">
+									<span class="input-group-text text-bold" id="firstName"><i
+										class="fa fa-plus"></i></span> <input required type="text"
+										name="name" class="form-control"
+										placeholder="Enter First Name" aria-label="firstname"
+										aria-describedby="basic-addon1">
+								</div>
+								<!-- second name  -->
+								<div class="input-group mb-3 ">
+									<span class="input-group-text text-bold" id="secondName"><i
+										class="fa fa-user-alt"></i></span> <input required type="text"
+										class="form-control" placeholder="Enter Second Name"
+										name="secondName" aria-label="secondname"
+										aria-describedby="basic-addon1">
+								</div>
+								<!-- Phone field  -->
+								<div class="input-group mb-3 ">
+									<span class="input-group-text text-bold" id="phone"><i
+										class="fa fa-phone"></i></span> <input required min="10"
+										type="number" class="form-control" name="phone"
+										placeholder="Enter Phone Number" aria-label="phone"
+										aria-describedby="basic-addon1">
+								</div>
+								<!-- email field  -->
+								<div class="input-group mb-3 ">
+									<span class="input-group-text text-bold" id="email">@</span> <input
+										required type="email" class="form-control" name="email"
+										placeholder="Enter Email Address" aria-label="email"
+										aria-describedby="basic-addon1">
+								</div>
+								<!-- work field  -->
+								<div class="input-group mb-3 ">
+									<span class="input-group-text text-bold" id="work"><i
+										class="fa fa-briefcase"></i></span> <input type="text" required
+										class="form-control" name="work" placeholder="Enter work"
+										aria-label="work" aria-describedby="basic-addon1">
+								</div>
+								<!-- contact description field  -->
+								<div class="input-group mb-3">
+									<span style="width: 10%;" class="input-group-text">Contact Info.</span>
+									<textarea id="mytextarea" class="form-control" rows="10" name="description"
+										aria-label="With textarea" style="width: 90%;" placeholder="Contact Information"></textarea>
+								</div>
+
+								<!-- image field  -->
+								<div class="input-group mb-3">
+									<input type="file" class="form-control" id="file" name="image1">
+									<label class="input-group-text" for="inputGroupFile02">Upload</label>
+								</div>
+
+								<div
+									class="d-flex align-items-center justify-content-center pb-4">
+
+									<button type="submit" data-mdb-button-init data-mdb-ripple-init
+										class="btn btn-outline-success">Save Contact</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.tiny.cloud/1/9bx6kn00o4smnpawrw7g9cms7soggsnnvr8pf1j8n348jxnz/tinymce/7/tinymce.min.js"
+			referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector : '#mytextarea'
+			});
+		</script>
+		
+	</section>
+</body>
+</html>
